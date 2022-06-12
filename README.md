@@ -89,6 +89,7 @@ ypred=m.predict(xtestnorm)
 ```
 `LR accuracy with imbalanced data 78%`
 
+![lr](https://user-images.githubusercontent.com/86428423/173228490-79a13cbe-a923-4c1d-9a62-dbbf6ec5ef85.png)
 
 `even if the accuracy of the model is 78% our model is predicting that all the output as 0 and it fails to predict any 1's. This is due to a case that we had seen earlier that our target variable is imbalanced.`
 
@@ -108,3 +109,6 @@ xunder,yunder=nm.fit_resample(xtrainnorm,ytrain)
 `NearMiss Accuracy 39%`
 
 ![nearmiss](https://user-images.githubusercontent.com/86428423/173228381-ea520f27-b9aa-4956-bd3f-d0c1699e696b.png)
+
+## 6. Tablue Dashboard
+
