@@ -110,5 +110,6 @@ xunder,yunder=nm.fit_resample(xtrainnorm,ytrain)
 
 ![nearmiss](https://user-images.githubusercontent.com/86428423/173228381-ea520f27-b9aa-4956-bd3f-d0c1699e696b.png)
 
-## 6. Tablue Dashboard
+## 6. Tableau Dashboard
 
+[Tableau link](https://public.tableau.com/views/Loan_risk/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
