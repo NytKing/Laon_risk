@@ -87,6 +87,9 @@ m=LogisticRegression(random_state=1)
 m.fit(xtrainnorm,ytrain)
 ypred=m.predict(xtestnorm)
 ```
+`LR accuracy with imbalanced data 78%`
+
+
 `even if the accuracy of the model is 78% our model is predicting that all the output as 0 and it fails to predict any 1's. This is due to a case that we had seen earlier that our target variable is imbalanced.`
 
 Ttying SMOTE oversampling and NearMiss undersampling for tackling imbalance in the target variable
@@ -94,7 +97,7 @@ Ttying SMOTE oversampling and NearMiss undersampling for tackling imbalance in t
 sm=SMOTE(random_state=2)
 xover,yover=sm.fit_resample(xtrainnorm,ytrain)
 ```
-`Accuracy 69%`
+`SMOTE Accuracy 69%`
 
 ![smote](https://user-images.githubusercontent.com/86428423/173228161-1e7d33e3-4e97-4dbc-95c3-975f45a431db.png)
 
@@ -102,5 +105,6 @@ xover,yover=sm.fit_resample(xtrainnorm,ytrain)
 nm=NearMiss()
 xunder,yunder=nm.fit_resample(xtrainnorm,ytrain)
 ```
-`Accuracy 69%`
+`NearMiss Accuracy 39%`
 
+![nearmiss](https://user-images.githubusercontent.com/86428423/173228381-ea520f27-b9aa-4956-bd3f-d0c1699e696b.png)
