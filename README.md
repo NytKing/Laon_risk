@@ -113,3 +113,7 @@ xunder,yunder=nm.fit_resample(xtrainnorm,ytrain)
 ## 6. Tableau Dashboard
 
 [Tableau link](https://public.tableau.com/views/Loan_risk/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
+
+
+![dsah](https://user-images.githubusercontent.com/86428423/173229225-31720dad-c328-4b0d-b905-2080c3f49072.png)
+
