@@ -58,7 +58,7 @@ sns.violinplot(ax=axes[1,2],data=loan_risk["loan_percent_income"]);
 sns.histplot(ax=axes[2,1],data=loan_risk["cb_person_cred_hist_length"],kde=True);
 # I have dropped all the object dtypes and target variable
 ```
-![distribution](https://user-images.githubusercontent.com/86428423/173224477-7b636195-13fd-4d66-826b-3afcbdf94e7e.png)
+![distribution](https://user-images.githubusercontent.com/86428423/173227682-9f542df2-4b19-46e1-aa4a-2ea2481df468.png)
 
 Plotting the target variable to see the imbalance in the dataset
 ```
