@@ -58,4 +58,11 @@ sns.violinplot(ax=axes[1,2],data=loan_risk["loan_percent_income"]);
 sns.histplot(ax=axes[2,1],data=loan_risk["cb_person_cred_hist_length"],kde=True);
 # I have dropped all the object dtypes and target variable
 ```
+![distribution](https://user-images.githubusercontent.com/86428423/173224477-7b636195-13fd-4d66-826b-3afcbdf94e7e.png)
 
+Plotting the target variable to see the imbalance in the dataset
+```
+#loan_risk["loan_status"].value_counts(1) --> will give the percent of 0s and 1s in the target column
+#I have used semicolon at the end to remove the text that appeears before the plot
+plt.pie(loan_risk["loan_status"].value_counts(1),labels=["0s","1s"],autopct='%.2f');
+```
