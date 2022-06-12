@@ -66,3 +66,34 @@ Plotting the target variable to see the imbalance in the dataset
 #I have used semicolon at the end to remove the text that appeears before the plot
 plt.pie(loan_risk["loan_status"].value_counts(1),labels=["0s","1s"],autopct='%.2f');
 ```
+![imbalance](https://user-images.githubusercontent.com/86428423/173227807-3f70cd70-2339-4121-8a80-d75c1b3377a0.png)
+
+## 5. Designing the model
+
+I have used Logistic regression model
+
+Splitting and normalizing the dataset
+```
+x=loan_risk.drop(["loan_status"],axis=1)
+y=loan_risk["loan_status"]
+xtrain,xtest,ytrain,ytest=train_test_split(x,y,test_size=0.25,random_state=25) #using random sate to get the same values every time query is run and train:test ratio = .75:.25
+xtrainnorm=pd.DataFrame(preprocessing.normalize(xtrain,axis=0),columns=xtrain.columns)
+xtestnorm=pd.DataFrame(preprocessing.normalize(xtest,axis=0),columns=xtest.columns)
+```
+Loading imbalanced data into the model
+```
+#Logistic Regression model and predicting ytest values
+m=LogisticRegression(random_state=1)
+m.fit(xtrainnorm,ytrain)
+ypred=m.predict(xtestnorm)
+```
+`even if the accuracy of the model is 78% our model is predicting that all the output as 0 and it fails to predict any 1's. This is due to a case that we had seen earlier that our target variable is imbalanced.`
+
+Ttying SMOTE oversampling and NearMiss undersampling for tackling imbalance in the target variable
+```
+sm=SMOTE(random_state=2)
+xover,yover=sm.fit_resample(xtrainnorm,ytrain)
+
+nm=NearMiss()
+xunder,yunder=nm.fit_resample(xtrainnorm,ytrain)
+```
