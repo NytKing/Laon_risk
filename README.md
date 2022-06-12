@@ -93,7 +93,14 @@ Ttying SMOTE oversampling and NearMiss undersampling for tackling imbalance in t
 ```
 sm=SMOTE(random_state=2)
 xover,yover=sm.fit_resample(xtrainnorm,ytrain)
+```
+`Accuracy 69%`
 
+![smote](https://user-images.githubusercontent.com/86428423/173228161-1e7d33e3-4e97-4dbc-95c3-975f45a431db.png)
+
+```
 nm=NearMiss()
 xunder,yunder=nm.fit_resample(xtrainnorm,ytrain)
 ```
+`Accuracy 69%`
+
